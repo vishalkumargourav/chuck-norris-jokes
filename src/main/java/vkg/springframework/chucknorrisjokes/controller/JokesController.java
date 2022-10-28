@@ -3,19 +3,19 @@ package vkg.springframework.chucknorrisjokes.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import vkg.springframework.chucknorrisjokes.services.JokesService;
+import vkg.springframework.chucknorrisjokes.services.JokeServiceImpl;
 
 @Controller
 public class JokesController {
-    private final JokesService jokesService;
+    private final JokeServiceImpl jokeServiceImpl;
 
-    public JokesController(JokesService jokesService) {
-        this.jokesService = jokesService;
+    public JokesController(JokeServiceImpl jokeServiceImpl) {
+        this.jokeServiceImpl = jokeServiceImpl;
     }
 
     @RequestMapping("/getJoke")
     public String getChuckJokes(Model model){
-        model.addAttribute("joke", jokesService.getChuckNorrisQuotes());
+        model.addAttribute("joke", jokeServiceImpl.getChuckNorrisQuotes());
 
         return "jokes/jokeTemplate";
     }
