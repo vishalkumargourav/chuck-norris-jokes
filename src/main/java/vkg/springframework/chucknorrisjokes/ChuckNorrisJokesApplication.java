@@ -9,11 +9,7 @@ import vkg.springframework.chucknorrisjokes.services.JokesService;
 public class ChuckNorrisJokesApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext ctx = SpringApplication.run(ChuckNorrisJokesApplication.class, args);
-
-		JokesService jokesService = (JokesService) ctx.getBean("jokesService");
-
-		System.out.println(jokesService.getChuckNorrisQuotes());
+		SpringApplication.run(ChuckNorrisJokesApplication.class, args);
 	}
 
 }
